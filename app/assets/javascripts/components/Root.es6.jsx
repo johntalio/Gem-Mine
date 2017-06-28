@@ -5,6 +5,7 @@ class Root extends React.Component {
     this.state = {gems: []}
   }
 
+  // need to enable the retrieval of rubygems using the gem
   handleSubmit(event) {
     event.preventDefault()
     $.ajax({
@@ -12,17 +13,14 @@ class Root extends React.Component {
     })
   }
 
-
   render() {
     return(
-      <div className="search-page-container">
-        <header>
-          <h2>Search Gems</h2>
+      <div className="search-container">
+        <header className="search-header">
+          <h2 className="search-title">Search Gems</h2>
         </header>
-      <form className="search-form-container">
-        <input className="search-form"></input>
-      </form>
-    </div>
+        <SearchBar />
+      </div>
     )
   }
 }
