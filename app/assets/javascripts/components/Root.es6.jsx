@@ -8,16 +8,17 @@ class Root extends React.Component {
   // need to enable the retrieval of rubygems using the gem
   // the url below should be a local route that, in the controller, directs to a method in the model that uses the rubygems gem to search for a gem name
   gemInfo(gemName) {
-    event.preventDefault()
     $.ajax({
-      url: "/"
+      url: "/",
+      data: "name=" + gemName
     }).done((response) => {
       console.log(response);
-      // this.setState({gems: response})
+      this.setState({gems: response})
     })
   }
 
   render() {
+    console.log(this.state)
     return(
       <div className="search-container">
         <header className="search-header">
