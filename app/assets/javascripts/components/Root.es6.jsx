@@ -1,15 +1,19 @@
 class Root extends React.Component {
   constructor() {
     super()
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.gemInfo = this.gemInfo.bind(this)
     this.state = {gems: []}
   }
 
   // need to enable the retrieval of rubygems using the gem
-  handleSubmit(event) {
+  // the url below should be a local route that, in the controller, directs to a method in the model that uses the rubygems gem to search for a gem name
+  gemInfo(gemName) {
     event.preventDefault()
     $.ajax({
-      url: ''
+      url: "/"
+    }).done((response) => {
+      console.log(response);
+      // this.setState({gems: response})
     })
   }
 
@@ -19,7 +23,7 @@ class Root extends React.Component {
         <header className="search-header">
           <h2 className="search-title">Search Gems</h2>
         </header>
-        <SearchBar />
+        <SearchBar gemInfo={this.gemInfo} />
       </div>
     )
   }
