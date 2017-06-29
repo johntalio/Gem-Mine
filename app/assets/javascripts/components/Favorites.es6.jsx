@@ -10,6 +10,7 @@ class Favorites extends React.Component {
         <header className="favorites-header">
           <h2>Favorites</h2>
         </header>
+        <FavoritesBank />
       </div>
     )
   }
