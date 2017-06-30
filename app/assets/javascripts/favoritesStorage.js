@@ -1,8 +1,8 @@
 // if (typeof(Storage) !== "undefined") {
 //   // store gems
-//   sessionStorage.setItem("name", "cucumber");
+//   localStorage.setItem("name", "cucumber");
 //   // retrieve gems and insert them into an html element
-//   document.getElementById("bank-container").innerHTML = sessionStorage.getItem("name");
+//   document.getElementById("bank-container").innerHTML = localStorage.getItem("name");
 // } else {
 //   console.log("Sorry, no web storage support for you...")
 // }
