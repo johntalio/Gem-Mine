@@ -31,13 +31,17 @@ class Root extends React.Component {
       var results = $('.search-container').find('.success');
 
       $.each(results, function(i, depend) {
+        console.log(depend, "depend")
         var gemName = $.trim(depend.innerText);
+        console.log(gemName, "gem")
         var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        console.log(favorites, "favorites")
         var isFav = favorites.find(fav => (fav.name == gemName));
+        console.log(isFav, "isFav")
 
         if (isFav) {
-          $(depend).find('.favorite-button').attr('src', '/assets/star-blue.png');
-        };
+          $(depend).find('.favorite-button').attr("src", "/assets/star-blue.png");
+        }
       });
     });
   }
