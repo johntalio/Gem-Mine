@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     event.preventDefault()
     let searchInput = this.refs.searchBar;
     this.props.gemInfo(searchInput.value);
-    searchInput.value = "";
+    // searchInput.value = "";
   }
 
   render() {

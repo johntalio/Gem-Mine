@@ -1,0 +1,29 @@
+<div class="success-container">
+  <div class="success-result">
+    <div class="success-link">
+      <a href="<%= @result["project_uri"] %>"><%= @result["name"] %></a>
+    </div>
+    <%= image_submit_tag("star-gray.png", class: "favorite-button") %>
+  </div>
+  <div class="success-details">
+    <div class="success-info">
+      <h2>Information</h2>
+      <p><%= @result["info"] %></p>
+    </div>
+    <div class="success-depend">
+      <h2>Dependencies</h2>
+      <div class="depend-list">
+        <% if @result["dependencies"]["development"].any? %>
+          <% @result["dependencies"]["development"].each do |dependency| %>
+            <div class="success depend">
+              <a class="success-link" href="https://rubygems.org/gems/<%= dependency["name"] %>"><%= dependency["name"] %></a>
+              <%= image_submit_tag("star-gray.png", class: "favorite-button") %>
+            </div>
+          <% end %>
+        <% else %>
+          <p>None</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

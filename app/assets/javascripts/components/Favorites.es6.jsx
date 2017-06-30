@@ -1,9 +1,22 @@
 class Favorites extends React.Component {
   constructor() {
     super()
+
+    if ($('.favorite-bank-container').length) {
+
+      var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      var favBank = function(fav) {
+        return(
+          <div className="favorite">
+            <input alt="Star blue" type="image" src="/assets/star-blue.png" className="favorite-button" />
+            <div className="favorite-link"><a href="${fav.link}">${fav.name}</a></div>
+          </div>
+        )
+      }
+    }
   }
 
-  // beneath closing header tag, there needs to be a component which displays all the user's favorites
+
   render() {
     return(
       <div className="favorites-container">
