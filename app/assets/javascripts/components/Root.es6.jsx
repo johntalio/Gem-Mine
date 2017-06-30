@@ -28,9 +28,9 @@ class Root extends React.Component {
         });
       };
 
-      var results = $('.search-container').find('.success');
+      var search_results = $('.search-container').find('.success');
 
-      $.each(results, function(i, depend) {
+      $.each(search_results, function(i, depend) {
         console.log(depend, "depend")
         var gemName = $.trim(depend.innerText);
         console.log(gemName, "gem")

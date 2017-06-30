@@ -31,7 +31,6 @@ class Favorites extends React.Component {
       var gem = $(this).siblings('.success-link');
 
       if (localStorage.getItem('favorites')) {
-        console.log(gem, "added")
         toggleFav(gem);
       } else {
         initFavs(gem)
