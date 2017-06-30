@@ -10,9 +10,36 @@ class Root extends React.Component {
       url: "/search",
       data: `query=${query}`
     }).done((response) => {
-      $('.success-link').remove()
+      $('.success-container').remove();
+      $('.failure-message').remove();
       $('.search-form-container').append(response);
-    })
+      $(this).val('');
+
+      if ($('.failure-message').length) {
+        $('.search-container').remove('.success-info', '.success-depend');
+        $('.search-container').addClass('failure');
+        $('input').addClass('failure');
+
+        $('input').on('focus', function() {
+          $('.search-container').removeClass('failure');
+          $(this).removeClass('failure');
+          $(this).val('');
+          $('.failure-message').remove();
+        });
+      };
+
+      var results = $('.search-container').find('.success');
+
+      $.each(results, function(i, depend) {
+        var gemName = $.trim(depend.innerText);
+        var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        var isFav = favorites.find(fav => (fav.name == gemName));
+
+        if (isFav) {
+          $(depend).find('.favorite-button').attr('src', '/assets/star-blue.png');
+        };
+      });
+    });
   }
 
   render() {
