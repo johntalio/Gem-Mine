@@ -15,8 +15,8 @@
       <div class="depend-list">
         <% if @result["dependencies"]["development"].any? %>
           <% @result["dependencies"]["development"].each do |dependency| %>
-            <div class="depend">
-              <a class="depend-link" href="https://rubygems.org/gems/<%= dependency["name"] %>"><%= dependency["name"] %></a>
+            <div class="success depend">
+              <a class="success-link" href="https://rubygems.org/gems/<%= dependency["name"] %>"><%= dependency["name"] %></a>
               <%= image_submit_tag("star-gray.png", class: "favorite-button") %>
             </div>
           <% end %>
