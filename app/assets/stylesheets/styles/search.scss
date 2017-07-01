@@ -53,17 +53,9 @@ $offset-pad: 50px;
     #search-button {
       background: image-url("magnifying-glass.png");
       background-repeat: no-repeat;
-      width: 30px;
+      width: 20px;
       float: right;
       text-align: right;
-
-      &.failure {
-        background-image: image-url("magnifying-glass-red.png");
-        background-repeat: no-repeat;
-        width: 30px;
-        float: right;
-        text-align: right;
-      }
     }
   }
 }
