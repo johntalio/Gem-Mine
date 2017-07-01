@@ -5,8 +5,7 @@ $(document).ready(function() {
     var favBank = function(fav) {
       return(`
         <div class="favorite">
-          <input alt="Star blue" type="image" src="/assets/star-blue.png" class="favorite-button" />
-          <div class="favorite-link"><a href="${fav.link}" target="_blank">${fav.name}</a></div>
+          <div class="favorite-link"><input alt="Star blue" type="image" src="/assets/star-blue.png" class="favorite-button" /> <a href="https://rubygems.org/gems/${fav.name}" target="_blank">${fav.name}</a></div>
         </div>
       `)
     }
@@ -16,13 +15,15 @@ $(document).ready(function() {
     $('.favorite-bank-container').append(favList);
 
     $('.favorite-bank-container').on('click', '.favorite-button', function() {
-      var gem = $(this).siblings('.favorite-link');
+      var gem = $(this).parent();
       removeFav(gem);
-      $(this).parent().remove();
+      gem.remove();
     })
   }
 
-  $('.search-container').on('click', '.favorite-button', function() {
+  $('.search-container').on('click', '.favorite-button', function(event) {
+    event.preventDefault();
+
     var gem = $(this).siblings('.success-link');
 
     if (localStorage.getItem('favorites')) {
