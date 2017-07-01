@@ -12,7 +12,7 @@ class Root extends React.Component {
     }).done((response) => {
       $('.success-container').remove();
       $('.failure-message').remove();
-      $('.search-form').removeClass('failure');
+      $('input').removeClass('failure');
       $('.search-form-container').removeClass('failure');
       $('.search-form-container').append(response);
       $(this).val('');
@@ -26,9 +26,9 @@ class Root extends React.Component {
         $('input').on('focus', function() {
           $('.search-form-container').removeClass('failure');
           $('.search-container').removeClass('failure');
+          $('.failure-message').remove();
           $(this).removeClass('failure');
           $(this).val('');
-          $('.failure-message').remove();
         });
       };
 
