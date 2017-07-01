@@ -81,7 +81,7 @@ class Favorites extends React.Component {
     return(
       <div className="favorites-container">
         <header className="favorites-header">
-          <h2>Favorites</h2>
+          <h2>Your Favorite Gems</h2>
         </header>
         <FavoritesBank />
       </div>
