@@ -56,6 +56,14 @@ $offset-pad: 50px;
       width: 30px;
       float: right;
       text-align: right;
+
+      &.failure {
+        background-image: image-url("magnifying-glass-red.png");
+        background-repeat: no-repeat;
+        width: 30px;
+        float: right;
+        text-align: right;
+      }
     }
   }
 }
