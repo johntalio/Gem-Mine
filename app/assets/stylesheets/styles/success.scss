@@ -58,13 +58,13 @@
   }
 }
 
-.success-error {
-  margin-top: -20px;
-  margin-left: -30px;
+.failure-message {
+  margin-top: 20px;
+  margin-left: 30px;
   max-width: $search-width;
   text-align: center;
   color: $error-red;
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.6em;
   letter-spacing: 0.04em;
 
