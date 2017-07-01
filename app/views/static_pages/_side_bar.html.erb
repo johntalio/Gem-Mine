@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="header">
+    <div class="logo">
+      <%= image_tag "teachable-logo.png" %>
+    </div>
+  </div>
+  <div class="site-links">
+    <div class="site-links-i <% 'active' if current_page?(controller: 'static_pages', action: 'root') %>">
+      <a href="/">Search</a>
+    </div>
+
+    <div class="site-links-i <% 'active' if current_page?(controller: 'static_pages', action: 'favorites') %>">
+      <a href="/favorites">Favorites</a>
+    </div>
+  </div>
+</div>
