@@ -28,7 +28,7 @@ $offset-pad: 50px;
       padding: 25px;
     }
 
-    &.error {
+    &.failure {
       border-color: $error-red;
     }
 
@@ -45,12 +45,15 @@ $offset-pad: 50px;
       font-size: 1em;
       color: $mid-gray;
 
-      &.error {
+      &.failure {
         color: $error-red;
       }
     }
 
     #search-button {
+      background: image-url("magnifying-glass.png");
+      background-repeat: no-repeat;
+      width: 30px;
       float: right;
       text-align: right;
     }
