@@ -1,0 +1,28 @@
+.favorites-bank-container {
+  margin-top: 50px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+
+  @media screen and (max-width: $break-small) {
+    margin-top: 25px;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .favorite {
+    margin-bottom: 20px;
+
+    * {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.15em;
+      letter-spacing: 0.5px;
+
+      a {
+        color: $blue;
+      }
+    }
+  }
+}
