@@ -12,15 +12,19 @@ class Root extends React.Component {
     }).done((response) => {
       $('.success-container').remove();
       $('.failure-message').remove();
+      $('.search-form').removeClass('failure');
+      $('.search-form-container').removeClass('failure');
       $('.search-form-container').append(response);
       $(this).val('');
 
       if ($('.failure-message').length) {
         $('.search-container').remove('.success-info', '.success-depend');
+        $('.search-form-container').addClass('failure');
         $('.search-container').addClass('failure');
         $('input').addClass('failure');
 
         $('input').on('focus', function() {
+          $('.search-form-container').removeClass('failure');
           $('.search-container').removeClass('failure');
           $(this).removeClass('failure');
           $(this).val('');

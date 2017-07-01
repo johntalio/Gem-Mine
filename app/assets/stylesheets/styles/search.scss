@@ -1,0 +1,61 @@
+$offset-pad: 50px;
+
+.search-container {
+
+  > * {
+    padding-left: $offset-pad;
+    @media screen and (max-width: $break-small) {
+      padding-left: 0px;
+    }
+  }
+
+  .search-form-container {
+    max-width: $search-width;
+    border: 1px solid $mid-gray;
+    border-radius: 100px;
+    margin-top: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: $offset-pad;
+
+    @media screen and (max-width: $break-lg) {
+      max-width: 85%;
+      padding: 25px;
+    }
+
+    @media screen and (max-width: $break-small) {
+      max-width: 100%;
+      padding: 25px;
+    }
+
+    &.failure {
+      border-color: $error-red;
+    }
+
+    .search-form {
+      width: 90%;
+
+      @media screen and (max-width: $break-tiny) {
+        max-width: 75%;
+      }
+    }
+
+    input {
+      border: none;
+      font-size: 1em;
+      color: $mid-gray;
+
+      &.failure {
+        color: $error-red;
+      }
+    }
+
+    #search-button {
+      background: image-url("magnifying-glass.png");
+      background-repeat: no-repeat;
+      width: 30px;
+      float: right;
+      text-align: right;
+    }
+  }
+}

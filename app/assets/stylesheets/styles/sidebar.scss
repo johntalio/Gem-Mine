@@ -1,0 +1,62 @@
+.sidebar {
+  height: 100vh;
+  width: 100%;
+  background: image-url("map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-bottom: 62.5%;
+
+  @media screen and (max-width: $break-small) {
+    height: 150px;
+    padding-bottom: 0px;
+    background-position: 35% 35%;
+  }
+
+  .logo {
+    text-align: right;
+    padding: 25px 35px;
+
+    @media screen and (max-width: $break-small) {
+      padding-top: 10px;
+      text-align: left;
+    }
+  }
+
+  .site-links {
+    float: right;
+    position: relative;
+    top: 50%;
+
+    @media screen and (max-width: $break-small) {
+      top: 53px;
+
+      > * {
+        display: inline-block;
+      }
+    }
+
+    .site-links-i {
+      width: 125px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+
+      @media screen and (max-width: $break-small) {
+        padding-left: 0px;
+      }
+
+      a {
+        text-align: left;
+        color: $white;
+        font-size: 1.05em;
+        letter-spacing: 0.03em;
+        line-height: 1.55em;
+      }
+    }
+
+    .active {
+      background: rgba(255, 255, 255, 0.17);
+    }
+  }
+}
