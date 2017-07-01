@@ -1,0 +1,9 @@
+<div class="search-container">
+  <header class="search-header">
+    <h2 class="search-title">Search Gems</h2>
+  </header>
+  <form class="search-form-container">
+    <%= text_field_tag 'query', nil, class: "search-form", placeholder: "Search" %>
+    <%= image_submit_tag("magnifying-glass.png", id: 'search-button') %>
+  </form>
+</div>
