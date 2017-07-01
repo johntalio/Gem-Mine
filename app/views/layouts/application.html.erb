@@ -6,10 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-container">
+      <div class="row no-gutters">
+        <div class="col-lg-3 col-md-4 col-sm-4 site-sidebar">
+          <%= render 'static_pages/sidebar' %>
+        </div>
+
+        <div class="col-lg-9 col-md-8 col-sm-4 site-main">
+          <div class="main-container">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
